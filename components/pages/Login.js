@@ -22,6 +22,10 @@ class Login extends React.Component {
     const form = this._form.getValue(); // use that ref to get the form value
     console.log('email: ', form.email);
     console.log('pass: ', form.password);
+    console.log(JSON.stringify({
+      email: form.email,
+      password: form.password,
+    }));
 
     // post login info
     fetch('http://localhost:3000/auth/login/', {
@@ -46,7 +50,8 @@ class Login extends React.Component {
         */
         console.log(responseJson)
       }).catch((error) =>{
-        console.error(error);
+        console.log(error);
+        // console.error(error);
       });
   }
 

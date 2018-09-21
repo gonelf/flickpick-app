@@ -28,7 +28,7 @@ class Login extends React.Component {
     }));
 
     // post login info
-    fetch('http://localhost:3000/auth/login/', {
+    fetch('https://flickpick-rails.herokuapp.com/auth/login/', {
       method: 'POST',
       headers: {
         Accept: 'application/vnd.todos.v0+json',
@@ -48,7 +48,7 @@ class Login extends React.Component {
           console.log(dataSource)
         });
         */
-        console.log(responseJson)
+        console.log(responseJson['auth_token'])
       }).catch((error) =>{
         console.log(error);
         // console.error(error);
